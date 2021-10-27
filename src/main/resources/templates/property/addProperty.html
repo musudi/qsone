@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>${pageTitle}</title>
+        <div th:replace="fragments/header :: header-css"/>
+    </head>
+    <body id="page-top">
+        <div th:replace="fragments/header :: header"/>
+        <div th:replace="fragments/topmenu :: topmenu"/>
+        
+        <div id="wrapper">
+        	<!-- sidebar menu -->
+            <div th:replace="fragments/sidemenu :: sidemenu"/>
+        		<div id="content-wrapper">
+				<form th:action="@{/property/save}" th:object="${property}" method="POST">
+					<table>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Property Owner:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{owner}" class="form-control" required="" placeholder="Owner">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Phone Number:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{phone}" class="form-control" required="" placeholder="Phone">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Mobile Number:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{mobile}" class="form-control" required="" placeholder="Mobile">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Email:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{email}" class="form-control" required="" placeholder="Email">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Property Type:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{propertyType}" class="form-control" required="" placeholder="PropertyType">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">For And Behalf Of Owner:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{forAndBehalfOfOwner}" class="form-control" required="" placeholder="ForAndBehalfOfOwner">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Name Of Authorized Person:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{nameOfAuthorizedPerson}" class="form-control" required="" placeholder="NameOfAuthorizedPerson">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Comments:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{comments}" class="form-control" required="" placeholder="Comments">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Purchase Price:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{purchasePrice}" class="form-control" required="" placeholder="PurchasePrice">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Stamp Duty:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{stampDuty}" class="form-control" required="" placeholder="StampDuty">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Legal Costs:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{legalCosts}" class="form-control" required="" placeholder="LegalCosts">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Additional Expenses:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{additionalExpenses}" class="form-control" required="" placeholder="AdditionalExpenses">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Original Building Cost:</dt>
+							</td>
+							<td>
+								<input type="text" th:field="*{originalBuildingCost}" class="form-control" required="" placeholder="OriginalBuildingCost">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Construction Start Date:</dt>
+							</td>
+							<td>
+								<input type="date" th:value="*{constructionStart}" th:field="*{constructionStart}" class="form-control" required="" placeholder="Construction Start Date"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Construction End Date:</dt>
+							</td>
+							<td>
+								<input type="date" th:value="*{constructionEnd}" th:field="*{constructionEnd}" class="form-control" required="" placeholder="Construction End Date"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Contract Exchange Date:</dt>
+							</td>
+							<td>
+								<input type="date" th:value="*{dateOfContractExchange}" th:field="*{dateOfContractExchange}" class="form-control" required="" placeholder="Date Of Contract Exchange"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">Date Settlement:</dt>
+							</td>
+							<td>
+								<input type="date" th:value="*{dateSettlement}" th:field="*{dateSettlement}" class="form-control" required="" placeholder="Date Settlement"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">First Lease Date:</dt>
+							</td>
+							<td>
+								<input type="date" th:value="*{firstLeaseDate}" th:field="*{firstLeaseDate}" class="form-control" required="" placeholder="First Lease Date"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<dt class="col-sm-3">First Taxable End Date:</dt>
+							</td>
+							<td>
+								<input type="date" th:value="*{firstTaxableEndDate}" th:field="*{firstTaxableEndDate}" class="form-control" required="" placeholder="First Taxable End Date"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input class="btn btn-primary btn-lg" type="submit" value="Save">
+							</td>
+						</tr>
+					</table>
+				</form>
+		</div>
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+   
+      <!-- /.content-wrapper -->
+
+    </div>
+
+	        	</div>
+        	<div th:replace="fragments/footer :: footer"/>
+        </div>
+        <div th:replace="fragments/modal :: modal"/>
+        <script th:src="@{assets/bootstrap-datepicker/js/bootstrap-datepicker.js}"></script>
+    </body>
+</html>

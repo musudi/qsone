@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <div th:replace="fragments/header :: header-css"/>
+    </head>
+    <body id="page-top">
+        <div th:replace="fragments/header :: header"/>
+        <div th:replace="fragments/topmenu :: topmenu"/>
+        
+        <div id="wrapper">
+        	<!-- sidebar menu -->
+            <div th:replace="fragments/sidemenu :: sidemenu"/>
+        		<div id="content-wrapper">
+	        		<div class="container-fluid">
+			        	<div class="card mb-3">
+				            <div class="card-header">
+				              <i class="fas fa-table"> <span th:text="${pageTitle}" /> </i>
+				              </div>
+				            <div class="card-body">
+				              <div class="table-responsive">
+				                <table class="table table-bordered" id="dataTable" width="100%">
+				                  <thead>
+				                    <tr>
+				                     	<th>Id</th>
+				                        <th>Owner</th>
+				                        <th>Email</th>
+				                        <th>Purchase Price</th>
+				                        <th>Date Of Contract Exchange</th>
+				                        <th>First Lease Date</th>
+				                        <th>First Taxable EndDate</th>
+				                    </tr>
+				                   </thead>
+				                   <tbody>
+				                        <tr th:each="property : ${properties}">
+					                        <td th:text="${property.id}" />	
+					                        <td th:text="${property.owner}" />	
+					                        <td th:text="${property.email}"/>
+					                        <td th:text="${property.purchasePrice}" />	
+					                        <td th:text="${property.dateOfContractExchange}" />	
+					                        <td th:text="${property.firstLeaseDate}" />
+					                        <td th:text="${property.firstTaxableEndDate}" />
+					                    </tr>
+				                    </tbody>
+				                </table>
+				              </div>
+				            </div>
+				            <div class="card-footer small text-muted">Property+</div>
+				          </div>
+	        		</div>
+	        	</div>
+        	<div th:replace="fragments/footer :: footer"/>
+        </div>
+        <div th:replace="fragments/modal :: modal"/>
+    </body>
+</html>
